@@ -17,7 +17,7 @@ This PHP class is useful to validate an HTML form fields.
 	$val->name('email')->value($email)->pattern('email')->required();
     $val->name('username')->value($username)->pattern('username')->required();
     $val->name('password')->value($password)->customPattern('[A-Za-z0-9-.;_!#@]{5,15}')->required();
-    $val->name('age')->value($password)->min(18)->max(40);
+    $val->name('age')->value($age)->min(18)->max(40);
     
     if($val->isSuccess()){
     	echo "Validation ok!";
@@ -62,7 +62,7 @@ This PHP class is useful to validate an HTML form fields.
 | Method          | Parameter | Description                                                                 | Example                   |
 |-----------------|-----------|-----------------------------------------------------------------------------|---------------------------|
 | name            | $name     | Return field name                                                           | name('Name')              |
-| value           | $value    | Return field value                                                          | value('Test')             |
+| value           | $value    | Return value field                                                          | value('Test')             |
 | pattern         | $pattern  | Return an error if the input has a different format than the pattern        | pattern('text')           |
 | customPattern   | $pattern  | Return an error if the input has a different format than the custom pattern | customPattern('[A-Za-z]') |
 | required        |           | Returns an error if the input is empty                                      | required()                |
