@@ -69,3 +69,23 @@ This PHP class is useful to validate an HTML form fields.
 | getErrors       |           | Return un array with validation errors                                      | getErrors()               |
 | displayErrors() |           | Return Html errors                                                          | displayErrors()           |
 
+### Patterns
+
+| Name     | Description                                                        | Example                           |
+|----------|--------------------------------------------------------------------|-----------------------------------|
+| uri      | Url without file extension                                         | folder-1/folder-2                 |
+| url      | Url with file extension                                            | http://www.example.com/myfile.gif |
+| word     | Only letters                                                       | World                             |
+| words    | Letters with space                                                 | Hello World                       |
+| word_int | Alpha-numeric characters                                           | test2016                          |
+| int      | Only integers                                                      | 154                               |
+| float    | Float number format                                                | 1,234.56                          |
+| tel      | Telephone number                                                   | +3908177777                       |
+| text     | Alpha-numeric and some special characters, spaces                  | Test1 ,.():;!@&%?                 |
+| address  | Address format                                                     | Street Name, 99                   |
+| fc       | Fiscal Code (only for italians)                                    | CSR...                            |
+| date_dmy | Date in format dd-MM-YYYY                                          | 01-01-2016                        |
+| date_ymd | Date in format YYYY-MM-dd                                          | 2016-01-01                        |
+| email    | E-Mail format                                                      | exampe@email.com                  |
+| username | Alpha-numeric and some special characters. Length between 5 and 15 | user1-._!#@                       |
+| password | Alpha-numeric and some special characters. Length between 5 and 15 | pass1-._!#@                       |
