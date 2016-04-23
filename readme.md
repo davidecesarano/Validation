@@ -2,6 +2,10 @@
 
 This PHP class is useful to validate an HTML form fields.
 
+### Usage
+
+	require_once('Validation.php');
+
 ### Typical Use
 
 	$email = 'example@email.com';
@@ -22,7 +26,7 @@ This PHP class is useful to validate an HTML form fields.
         var_dump($val->getErrors());
     }
 
-### Form HTML Use
+### Simple Form HTML Use
 
 	<?php $val = new Validation; ?>
     
