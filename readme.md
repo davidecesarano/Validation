@@ -53,5 +53,12 @@ This PHP class is useful to validate an HTML form fields.
         
     }
 
+### Methods
+
+| Method  | Parameter | Description    |
+|---------|-----------|----------------|
+| name    | $name     | Field name.    |
+| value   | $value    | Field value.   |
+| pattern | $pattern  | Field pattern. |
    
 
