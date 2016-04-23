@@ -7,3 +7,4 @@ This PHP class is useful to validate an HTML5 form fields.
 '''
 $val = new Validation();
 $val
+'''
