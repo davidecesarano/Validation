@@ -42,20 +42,24 @@ This PHP class is useful to validate an HTML form fields.
         <button type="submit">Send</button>
     </form>
     
-    if(!empty($_POST)){
+    <?php 
     	
-        $val->name('Name')->value($_POST['name'])->pattern('words')->required();
-        $val->name('E-Mail')->value($_POST['email'])->pattern('email')->required();
-        $val->name('Telephone')->value($_POST['tel'])->pattern('tel');
-        $val->name('Message')->value($_POST['message'])->pattern('text')->required();
-        
-        if($val->isSuccess()){
-        	echo 'Validation ok!';        
-        }else{
-        	echo $val->displayErrors();
-        }
-        
-    }
+        if(!empty($_POST)){
+    	
+          $val->name('Name')->value($_POST['name'])->pattern('words')->required();
+          $val->name('E-Mail')->value($_POST['email'])->pattern('email')->required();
+          $val->name('Telephone')->value($_POST['tel'])->pattern('tel');
+          $val->name('Message')->value($_POST['message'])->pattern('text')->required();
+
+          if($val->isSuccess()){
+              echo 'Validation ok!';        
+          }else{
+              echo $val->displayErrors();
+          }
+
+      }
+  
+  ?>
 
 ### Methods
 
