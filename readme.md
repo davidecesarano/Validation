@@ -59,7 +59,7 @@ This PHP class is useful to validate an HTML form fields.
 
       }
   
-  ?>
+    ?>
 
 ### Methods
 
