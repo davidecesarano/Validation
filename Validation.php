@@ -138,7 +138,7 @@
 		 */
 		public function min($length){
 			
-			if($this->value < $min || strlen($this->value) < $min){
+			if($this->value < $length || strlen($this->value) < $length){
 				$this->errors[] = 'Valore campo '.$this->name.' inferiore al valore minimo';
 			}
 			return $this;
@@ -154,7 +154,7 @@
 		 */
 		public function max($length){
 			
-			if($this->value > $max || strlen($this->value) > $max){
+			if($this->value > $length || strlen($this->value) > $length){
 				$this->errors[] = 'Valore campo '.$this->name.' superiore al valore massimo';
 			}
 			return $this;
