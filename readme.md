@@ -55,15 +55,15 @@ This PHP class is useful to validate an HTML form fields.
 
 ### Methods
 
-| Method        | Parameter | Description                                                | Example                   |
-|---------------|-----------|------------------------------------------------------------|---------------------------|
-| name          | $name     | Field name.                                                | name('Name')              |
-| value         | $value    | Field value.                                               | value('Test')             |
-| pattern       | $pattern  | Field pattern.                                             | pattern('text')           |
-| customPattern | $pattern  | Field custom pattern.                                      | customPattern('[A-Za-z]') |
-| required      |           | Field required.                                            | required()                |
-| min           | $length   | Minimum length field.                                      | min(10)                   |
-| max           | $length   | Maximum length field.                                      | max(10)                   |
-| equal         | $value    | Return an error if the input is not same as the parameter. | equal($value)             |
+| Method        | Parameter | Description                                                                           | Example                   |
+|---------------|-----------|---------------------------------------------------------------------------------------|---------------------------|
+| name          | $name     | Return field name                                                                     | name('Name')              |
+| value         | $value    | Return field value                                                                    | value('Test')             |
+| pattern       | $pattern  | Return an error if the input is not recognized by using regex                         | pattern('text')           |
+| customPattern | $pattern  | Return an error if the input is not recognized by using regex given in custom pattern | customPattern('[A-Za-z]') |
+| required      |           | Returns an error if the input is empty                                                | required()                |
+| min           | $length   | Return an error if the input is shorter than the parameter                            | min(10)                   |
+| max           | $length   | Return an error if the input is longer than the parameter                             | max(10)                   |
+| equal         | $value    | Return an error if the input is not same as the parameter                             | equal($value)             |
    
 
