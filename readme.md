@@ -82,11 +82,11 @@ This PHP class is useful to validate an HTML form fields.
 | Name     | Description                                                        | Example                           |
 |----------|--------------------------------------------------------------------|-----------------------------------|
 | uri      | Url without file extension                                         | folder-1/folder-2                 |
-| url      | Url with file extension                                            | http://www.example.com/myfile.gif |
+| url      | Uri with file extension                                            | http://www.example.com/myfile.gif |
 | word     | Only letters                                                       | World                             |
 | words    | Letters with space                                                 | Hello World                       |
 | word_int | Alpha-numeric characters                                           | test2016                          |
-| int      | Only integers                                                      | 154                               |
+| int      | Integer number format                                              | 154                               |
 | float    | Float number format                                                | 1,234.56                          |
 | tel      | Telephone number                                                   | +3908177777                       |
 | text     | Alpha-numeric and some special characters, spaces                  | Test1 ,.():;!@&%?                 |
