@@ -212,4 +212,15 @@
 			
 		}
 		
+		/**
+		 * Verifica se il valore è
+		 * un numero intero
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_int($value){
+			if(preg_match('/^([0-9]+)$/', $value)) return true;
+		}
+		
 	}
