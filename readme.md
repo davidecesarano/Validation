@@ -76,7 +76,7 @@ This PHP class is useful to validate an HTML form fields.
 | isSuccess       |           | Return true if there are no errors                                          | isSuccess()               |
 | getErrors       |           | Return un array with validation errors                                      | getErrors()               |
 | displayErrors() |           | Return Html errors                                                          | displayErrors()           |
-| is_int() 		  |           | Return true if the value is an integer number                               | is_int($value)            |
+| is_int() 		  | $value    | Return true if the value is an integer number                               | is_int($value)            |
 
 ### Patterns
 
