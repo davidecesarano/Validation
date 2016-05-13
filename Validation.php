@@ -15,26 +15,6 @@
 		
 		/**
 		 * @var array $patterns
-		 * 
-		 * 'uri' 		string/string-2/string_3
-		 * 'url'		http://www.example.com
-		 * 'word'		Word
-		 * 'words'		Hello World (lettere e spazi)
-		 * 'word_int'   Word1 (lettere e numeri interi)
-		 * 'int'		123
-		 * 'float'		1,234.56
-		 * 'tel'		+39081
-		 * 'text'		Hello world? (lettere, spazi, numeri e alcuni caratteri speciali:
-		 * 				, . ( ) : ! @ & % ?)
-		 * 'address'	Via Napoli, 10
-		 * 'fc'			CSR... (codice fiscale italiano)
-		 * 'date_dmy'	01-01-2016
-		 * 'date_ymd'	2016-01-01
-		 * 'email'		example@email.com
-		 * 'username'	user (lettere, numeri, lunghezza da 5 a 15 caratteri e alcuni caratteri speciali:
-		 * 				- . ; _ ! # @ -)
-		 * 'password'	password (lettere, numeri, lunghezza da 5 a 15 caratterie alcuni cartteri speciali:
-		 * 				- . ; _ ! # @)
 		 */
 		public $patterns = array(
 			'uri' 			=> '[A-Za-z0-9-\/_]+',
@@ -50,7 +30,7 @@
 			'fc'			=> '[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]',
 			'date_dmy'		=> '[0-9]{1,2}\-[0-9]{1,2}\-[0-9]{4}',
 			'date_ymd'		=> '[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}',
-			'date_ymdhis'	=> '[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}\s[0-9]{2}\:[0-9]{2}\:[0-9]{2}',
+			'date_ymdhis' 	=> '[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}\s[0-9]{2}\:[0-9]{2}\:[0-9]{2}',
 			'email'			=> '[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+',
 			'username'		=> '[A-Za-z0-9-.;_!#@]{5,15}',
 			'password'		=> '[A-Za-z0-9-.;_!#@]{5,15}'
