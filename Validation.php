@@ -1,15 +1,15 @@
 <?php
 	
-	/**
-	 * Validation 
-	 *
-	 * Semplice classe PHP per la validazione.
-	 *
-	 * @author Davide Cesarano <davide.cesarano@unipegaso.it>
-	 * @copyright (c) 2016, Davide Cesarano
-	 * @license https://github.com/davidecesarano/Validation/blob/master/LICENSE MIT License
-	 * @link https://github.com/davidecesarano/Validation
-	 */
+    /**
+     * Validation 
+     *
+     * Semplice classe PHP per la validazione.
+     *
+     * @author Davide Cesarano <davide.cesarano@unipegaso.it>
+     * @copyright (c) 2016, Davide Cesarano
+     * @license https://github.com/davidecesarano/Validation/blob/master/LICENSE MIT License
+     * @link https://github.com/davidecesarano/Validation
+     */
 	 
 	class Validation {
 		
