@@ -65,8 +65,8 @@ This PHP class is useful to validate an HTML form fields.
 
 | Method          | Parameter | Description                                                                 | Example                   |
 |-----------------|-----------|-----------------------------------------------------------------------------|---------------------------|
-| name            | $name     | Return field name                                                           | name('Name')              |
-| value           | $value    | Return value field                                                          | value('Test')             |
+| name            | $name     | Return field name                                                           | name('name')              |
+| value           | $value    | Return value field                                                          | value('value')            |
 | pattern         | $pattern  | Return an error if the input has a different format than the pattern        | pattern('text')           |
 | customPattern   | $pattern  | Return an error if the input has a different format than the custom pattern | customPattern('[A-Za-z]') |
 | required        |           | Returns an error if the input is empty                                      | required()                |
@@ -75,8 +75,14 @@ This PHP class is useful to validate an HTML form fields.
 | equal           | $value    | Return an error if the input is not same as the parameter                   | equal($value)             |
 | isSuccess       |           | Return true if there are no errors                                          | isSuccess()               |
 | getErrors       |           | Return un array with validation errors                                      | getErrors()               |
-| displayErrors() |           | Return Html errors                                                          | displayErrors()           |
-| is_int() 		  | $value    | Return true if the value is an integer number                               | is_int($value)            |
+| displayErrors   |           | Return Html errors                                                          | displayErrors()           |
+| is_int		  | $value    | Return true if the value is an integer number                               | is_int($value)            |
+| is_float	      | $value    | Return true if the value is an float number                                 | is_float($value)          |
+| is_alpha	      | $value    | Return true if the value is an alphabetic characters                        | is_alpha($value)          |
+| is_alphanum     | $value    | Return true if the value is an alphanumeric characters                      | is_alphanum($value)       |
+| is_url          | $value    | Return true if the value is an url (protocol is required)                   | is_url($value)            |
+| is_bool 	      | $value    | Return true if the value is an boolean                                      | is_bool($value)           |
+| is_email 	      | $value    | Return true if the value is an e-mail                                       | is_email($value)          |
 
 ### Patterns
 
