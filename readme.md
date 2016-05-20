@@ -15,7 +15,7 @@ This PHP class is useful to validate an HTML form fields.
     
     $val = new Validation();
 	$val->name('email')->value($email)->pattern('email')->required();
-    $val->name('username')->value($username)->pattern('username')->required();
+    $val->name('username')->value($username)->pattern('alpha')->required();
     $val->name('password')->value($password)->customPattern('[A-Za-z0-9-.;_!#@]{5,15}')->required();
     $val->name('age')->value($age)->min(18)->max(40);
     
@@ -46,10 +46,10 @@ This PHP class is useful to validate an HTML form fields.
     	
         if(!empty($_POST)){
     	
-          $val->name('Name')->value($_POST['name'])->pattern('words')->required();
-          $val->name('E-Mail')->value($_POST['email'])->pattern('email')->required();
-          $val->name('Telephone')->value($_POST['tel'])->pattern('tel');
-          $val->name('Message')->value($_POST['message'])->pattern('text')->required();
+          $val->name('name')->value($_POST['name'])->pattern('words')->required();
+          $val->name('e-mail')->value($_POST['email'])->pattern('email')->required();
+          $val->name('tel')->value($_POST['tel'])->pattern('tel');
+          $val->name('message')->value($_POST['message'])->pattern('text')->required();
 
           if($val->isSuccess()){
               echo 'Validation ok!';        
