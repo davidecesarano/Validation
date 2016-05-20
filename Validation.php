@@ -1,4 +1,4 @@
-<?php 
+<?php
 	
 	/**
 	 * Validation 
@@ -19,22 +19,19 @@
 		public $patterns = array(
 			'uri' 			=> '[A-Za-z0-9-\/_]+',
 			'url'			=> '[A-Za-z0-9-:.\/_]+',
-			'word'			=> '[A-Za-z]+',
-			'words'			=> '[a-zA-Z\s]+',
-			'word_int'		=> '[A-Za-z0-9]+',
+			'alpha'			=> '[A-Za-z]+',
+			'words'			=> '[\p{L}\s]+',
+			'alphanum'		=> '[A-Za-z0-9]+',
 			'int'			=> '[0-9]+',
 			'float'			=> '[[0-9\.,]+',
-			'tel'			=> '[0-9+]+',
-			'text'			=> '[A-Za-z0-9\s,.()-:;!@&%?]+',
+			'tel'			=> '[0-9+\s()-]+',
+			'text'			=> '[\p{L}0-9\s-.,;:!"%&()?\'°#]+',
 			'file'			=> '[A-Za-z0-9-_]+\.[A-Za-z0-9]{2,4}',
-			'address'		=> '[a-zA-Z0-9\s,()°-]+',
-			'fc'			=> '[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]',
+			'folder'		=> '[A-Za-z0-9-_]+',
+			'address'		=> '[\p{L}0-9\s.,()°-]+',
 			'date_dmy'		=> '[0-9]{1,2}\-[0-9]{1,2}\-[0-9]{4}',
-			'date_ymd'		=> '[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}',
-			'date_ymdhis' 	=> '[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}\s[0-9]{2}\:[0-9]{2}\:[0-9]{2}',
-			'email'			=> '[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+',
-			'username'		=> '[A-Za-z0-9-.;_!#@]{5,15}',
-			'password'		=> '[A-Za-z0-9-.;_!#@]{5,15}'
+			'date_ymd'		=> '[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}'
+			'email'			=> '[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+'
 		);
 		
 		/**
@@ -49,8 +46,10 @@
 		 * @return this
 		 */
 		public function name($name){
+			
 			$this->name = $name;
 			return $this;
+		
 		}
 		
 		/**
@@ -60,8 +59,10 @@
 		 * @return this
 		 */
 		public function value($value){
+			
 			$this->value = $value;
 			return $this;
+		
 		}
 		
 		/**
@@ -202,7 +203,73 @@
 		 * @return boolean
 		 */
 		public static function is_int($value){
-			if(preg_match('/^([0-9]+)$/', $value)) return true;
+			if(filter_var($value, FILTER_VALIDATE_INT)) return true;
+		}
+		
+		/**
+		 * Verifica se il valore è
+		 * un numero float
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_float($value){
+			if(filter_var($value, FILTER_VALIDATE_FLOAT)) return true;
+		}
+		
+		/**
+		 * Verifica se il valore è
+		 * una lettera dell'alfabeto
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_alpha($value){
+			if(filter_var($value, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => "/^[a-zA-Z]+$/")))) return true;
+		}
+		
+		/**
+		 * Verifica se il valore è
+		 * una lettera o un numero
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_alphanum($value){
+			if(filter_var($value, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => "/^[a-zA-Z0-9]+$/")))) return true;
+		}
+		
+		/**
+		 * Verifica se il valore è
+		 * un url
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_url($value){
+			if(filter_var($value, FILTER_VALIDATE_URL)) return true;
+		}
+		
+		/**
+		 * Verifica se il valore è
+		 * true o false
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_bool($value){
+			if(filter_var($value, FILTER_VALIDATE_BOOLEAN)) return true;
+		}
+		
+		/**
+		 * Verifica se il valore è
+		 * un'e-mail
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_email($value){
+			if(filter_var($value, FILTER_VALIDATE_EMAIL)) return true;
 		}
 		
 	}
