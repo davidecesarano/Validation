@@ -19,8 +19,8 @@
         public $patterns = array(
             'uri'       => '[A-Za-z0-9-\/_]+',
             'url'       => '[A-Za-z0-9-:.\/_]+',
-            'alpha'	    => '[A-Za-z]+',
-            'words'	    => '[\p{L}\s]+',
+            'alpha'     => '[A-Za-z]+',
+            'words'     => '[\p{L}\s]+',
             'alphanum'  => '[A-Za-z0-9]+',
             'int'       => '[0-9]+',
             'float'     => '[[0-9\.,]+',
