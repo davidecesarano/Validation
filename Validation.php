@@ -138,21 +138,21 @@
 			
 		}
 			
-		/**
-		 * Lunghezza massima
-		 * del valore del campo
-		 * 
-		 * @param int $max
-		 * @return this
-		 */
-		public function max($length){
-			
+        /**
+         * Lunghezza massima
+         * del valore del campo
+         * 
+         * @param int $max
+         * @return this
+         */
+        public function max($length){
+
             if(is_string($this->value)){
                 
                 if(strlen($this->value) > $length){
                     $this->errors[] = 'Valore campo '.$this->name.' superiore al valore massimo';
                 }
-           
+
             }else{
                 
                 if($this->value > $length){
@@ -160,9 +160,9 @@
                 }
                 
             }
-			return $this;
-			
-		}
+            return $this;
+
+        }
 
         /**
          * Confronta con il valore di
