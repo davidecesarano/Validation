@@ -113,20 +113,20 @@
         }
 
         /**
-		 * Lunghezza minima
-		 * del valore del campo
-		 * 
-		 * @param int $min
-		 * @return this
-		 */
-		public function min($length){
-			
-			if(is_string($this->value)){
+         * Lunghezza minima
+         * del valore del campo
+         * 
+         * @param int $min
+         * @return this
+         */
+        public function min($length){
+
+            if(is_string($this->value)){
                 
                 if(strlen($this->value) < $length){
                     $this->errors[] = 'Valore campo '.$this->name.' inferiore al valore minimo';
                 }
-           
+
             }else{
                 
                 if($this->value < $length){
@@ -134,9 +134,9 @@
                 }
                 
             }
-			return $this;
-			
-		}
+            return $this;
+
+        }
 			
         /**
          * Lunghezza massima
