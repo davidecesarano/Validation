@@ -225,8 +225,8 @@
             if(!$this->isSuccess()){
                
                 foreach($this->getErrors() as $error){
-					echo "$error\n";
-				}
+                    echo "$error\n";
+                }
                 exit;
                 
             }else{
