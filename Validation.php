@@ -214,6 +214,26 @@
             return $html;
             
         }
+        
+        /**
+         * Visualizza risultato della validazione
+         *
+         * @return booelan|string
+         */
+        public function result(){
+            
+            if(!$this->isSuccess()){
+               
+                foreach($this->getErrors() as $error){
+					echo "$error\n";
+				}
+                exit;
+                
+            }else{
+                return true;
+            }
+        
+        }
 
         /**
          * Verifica se il valore è
