@@ -74,7 +74,7 @@
          */
         public function pattern($name){
             
-            $regex = '/^('.$this->patterns[$name].')$/';
+            $regex = '/^('.$this->patterns[$name].')$/u';
             if($this->value != '' && !preg_match($regex, $this->value)){
                 $this->errors[] = 'Formato campo '.$this->name.' non valido.';
             }
@@ -90,7 +90,7 @@
          */
         public function customPattern($pattern){
             
-            $regex = '/^('.$pattern.')$/';
+            $regex = '/^('.$pattern.')$/u';
             if($this->value != '' && !preg_match($regex, $this->value)){
                 $this->errors[] = 'Formato campo '.$this->name.' non valido.';
             }
