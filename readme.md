@@ -66,8 +66,8 @@ This PHP class is useful to validate an HTML form fields.
 | Method          | Parameter | Description                                                                 | Example                           |
 |-----------------|-----------|-----------------------------------------------------------------------------|-----------------------------------|
 | name            | $name     | Return field name                                                           | name('name')                      |
-| value           | $value    | Return value field                                                          | value('$_POST['name]')            |
-| file            | $value    | Return $_FILES array                                                        | file('$_FILES['name']')           |
+| value           | $value    | Return value field                                                          | value($_POST['name])              |
+| file            | $value    | Return $_FILES array                                                        | file($_FILES['name'])             |
 | pattern         | $pattern  | Return an error if the input has a different format than the pattern        | pattern('text')                   |
 | customPattern   | $pattern  | Return an error if the input has a different format than the custom pattern | customPattern('[A-Za-z]')         |
 | required        |           | Returns an error if the input is empty                                      | required()                        |
