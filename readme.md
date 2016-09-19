@@ -82,6 +82,7 @@ This PHP class is useful to validate an HTML form fields.
 | is_alpha	      | $value    | Return true if the value is an alphabetic characters                        | is_alpha('test')                  |
 | is_alphanum     | $value    | Return true if the value is an alphanumeric characters                      | is_alphanum('test1')              |
 | is_url          | $value    | Return true if the value is an url (protocol is required)                   | is_url('http://www.example.com')  |
+| is_uri          | $value    | Return true if the value is an uri (protocol is not required)               | is_uri('www.example.com')         |
 | is_bool 	      | $value    | Return true if the value is an boolean                                      | is_bool(true)                     |
 | is_email 	      | $value    | Return true if the value is an e-mail                                       | is_email('email@email.com')       |
 
