@@ -64,6 +64,19 @@
             return $this;
 
         }
+        
+        /**
+		 * File
+		 * 
+		 * @param mixed $value
+		 * @return this
+		 */
+		public function file($value){
+			
+			$this->file = $value;
+			return $this;
+		
+		}
 
         /**
          * Pattern da applicare al riconoscimento
@@ -99,18 +112,18 @@
         }
 
         /**
-         * Campo obbligatorio
-         * 
-         * @return this
-         */
-        public function required(){
-            
-            if($this->value == '' || $this->value == null){
-                $this->errors[] = 'Campo '.$this->name.' obbligatorio.';
-            }
-            return $this;
-            
-        }
+		 * Campo obbligatorio
+		 * 
+		 * @return this
+		 */
+		public function required(){
+			
+			if((isset($this->file) && $this->file['error'] == 4) || ($this->value == '' || $this->value == null)){
+				$this->errors[] = 'Campo '.$this->name.' obbligatorio.';
+			}            
+			return $this;
+			
+		}
 
         /**
          * Lunghezza minima
@@ -175,6 +188,36 @@
 
             if($this->value != $value){
                 $this->errors[] = 'Valore campo '.$this->name.' non corrispondente.';
+            }
+            return $this;
+            
+        }
+        
+        /**
+         * Dimensione massima del file 
+         *
+         * @param int $size
+         * @return this 
+         */
+        public function maxSize($size){
+            
+            if($this->file['error'] != 4 && $this->file['size'] > $size){
+                $this->errors[] = 'Il file '.$this->name.' supera la dimensione massima di '.number_format($size / 1048576, 2).' MB.';
+            }
+            return $this;
+            
+        }
+        
+        /**
+         * Estensione (formato) del file
+         *
+         * @param string $extension
+         * @return this 
+         */
+        public function ext($extension){
+
+            if($this->file['error'] != 4 && pathinfo($this->file['name'], PATHINFO_EXTENSION) != $extension){
+                $this->errors[] = 'Il file '.$this->name.' non è un '.$extension.'.';
             }
             return $this;
             
@@ -280,15 +323,26 @@
         }
 
         /**
-         * Verifica se il valore è
-         * un url
-         *
-         * @param mixed $value
-         * @return boolean
-         */
-        public static function is_url($value){
-            if(filter_var($value, FILTER_VALIDATE_URL)) return true;
-        }
+		 * Verifica se il valore è
+		 * un url
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_url($value){
+			if(filter_var($value, FILTER_VALIDATE_URL)) return true;
+		}
+        
+        /**
+		 * Verifica se il valore è
+		 * un uri
+		 *
+		 * @param mixed $value
+		 * @return boolean
+		 */
+		public static function is_uri($value){
+			if(filter_var($value, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => "/^[A-Za-z0-9-\/_]+$/")))) return true;
+		}
 
         /**
          * Verifica se il valore è
