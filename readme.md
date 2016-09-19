@@ -66,15 +66,18 @@ This PHP class is useful to validate an HTML form fields.
 | Method          | Parameter | Description                                                                 | Example                           |
 |-----------------|-----------|-----------------------------------------------------------------------------|-----------------------------------|
 | name            | $name     | Return field name                                                           | name('name')                      |
-| value           | $value    | Return value field                                                          | value('value')                    |
+| value           | $value    | Return value field                                                          | value('$_POST['name]')            |
+| file            | $value    | Return $_FILES array                                                        | file('$_FILES['name']')           |
 | pattern         | $pattern  | Return an error if the input has a different format than the pattern        | pattern('text')                   |
 | customPattern   | $pattern  | Return an error if the input has a different format than the custom pattern | customPattern('[A-Za-z]')         |
 | required        |           | Returns an error if the input is empty                                      | required()                        |
 | min             | $length   | Return an error if the input is shorter than the parameter                  | min(10)                           |
 | max             | $length   | Return an error if the input is longer than the parameter                   | max(10)                           |
 | equal           | $value    | Return an error if the input is not same as the parameter                   | equal($value)                     |
+| maxSize         | $value    | Return an error if the file size exceeds the maximum allowable size         | maxSize(3145728)                  |
+| ext             | $value    | Return an error if the file extension is not same the parameter             | ext('pdf')                        |
 | isSuccess       |           | Return true if there are no errors                                          | isSuccess()                       |
-| getErrors       |           | Return un array with validation errors                                      | getErrors()                       |
+| getErrors       |           | Return an array with validation errors                                      | getErrors()                       |
 | displayErrors   |           | Return Html errors                                                          | displayErrors()                   |
 | result          |           | Return true if there are no errors or html errors                           | result()                          |
 | is_int		  | $value    | Return true if the value is an integer number                               | is_int(1)                         |
