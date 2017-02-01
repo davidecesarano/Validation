@@ -3,18 +3,19 @@
 This PHP class is useful to validate an HTML form fields.
 
 ## Usage
-
-	require_once('Validation.php');
+```php 
+require_once('Validation.php');
+```
 
 ## Typical Use
-
-	$email = 'example@email.com';
+```php
+    $email = 'example@email.com';
     $username = 'admin';
     $password = 'test';
     $age = 29;
     
     $val = new Validation();
-	$val->name('email')->value($email)->pattern('email')->required();
+    $val->name('email')->value($email)->pattern('email')->required();
     $val->name('username')->value($username)->pattern('alpha')->required();
     $val->name('password')->value($password)->customPattern('[A-Za-z0-9-.;_!#@]{5,15}')->required();
     $val->name('age')->value($age)->min(18)->max(40);
@@ -25,18 +26,19 @@ This PHP class is useful to validate an HTML form fields.
     	echo "Validation error!";
         var_dump($val->getErrors());
     }
+```
 
 ## Simple Form HTML Use
-
-	<?php $val = new Validation; ?>
+```
+    <?php $val = new Validation; ?>
     
     <form method="post" action="#">
     	<label for="name">Name:</label>
-        <input type="text" name="name" pattern="<?php echo $validation->patterns['words']; ?>" required>
+        <input type="text" name="name" pattern="<?php echo $val->patterns['words']; ?>" required>
         <label for="email">E-Mail:</label>
         <input type="email" name="email" required>
         <label for="tel">Telephone:</label>
-        <input type="text" name="tel" pattern="<?php echo $validation->patterns['tel']; ?>">
+        <input type="text" name="tel" pattern="<?php echo $val->patterns['tel']; ?>">
         <label for="message">Message:</label>
         <textarea name="message" cols="40" rows="6" required></textarea>
         <button type="submit">Send</button>
@@ -60,6 +62,7 @@ This PHP class is useful to validate an HTML form fields.
       }
   
     ?>
+```
 
 ## Methods
 
