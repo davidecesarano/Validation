@@ -1,12 +1,12 @@
-## Simple PHP class for Validation
+# Simple PHP class for Validation
 
 This PHP class is useful to validate an HTML form fields.
 
-### Usage
+## Usage
 
 	require_once('Validation.php');
 
-### Typical Use
+## Typical Use
 
 	$email = 'example@email.com';
     $username = 'admin';
@@ -26,7 +26,7 @@ This PHP class is useful to validate an HTML form fields.
         var_dump($val->getErrors());
     }
 
-### Simple Form HTML Use
+## Simple Form HTML Use
 
 	<?php $val = new Validation; ?>
     
@@ -61,7 +61,7 @@ This PHP class is useful to validate an HTML form fields.
   
     ?>
 
-### Methods
+## Methods
 
 | Method          | Parameter | Description                                                                 | Example                           |
 |-----------------|-----------|-----------------------------------------------------------------------------|-----------------------------------|
@@ -89,7 +89,7 @@ This PHP class is useful to validate an HTML form fields.
 | is_bool 	      | $value    | Return true if the value is an boolean                                      | is_bool(true)                     |
 | is_email 	      | $value    | Return true if the value is an e-mail                                       | is_email('email@email.com')       |
 
-### Patterns
+## Patterns
 
 | Name     | Description                                                        | Example                           |
 |----------|--------------------------------------------------------------------|-----------------------------------|
