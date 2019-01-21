@@ -31,7 +31,7 @@ require_once('Validation.php');
 ```
 
 ## Simple Form HTML Use
-```
+```php
     <?php $val = new Validation; ?>
     
     <form method="post" action="#">
