@@ -2,6 +2,8 @@
 
 This PHP class is useful to validate an HTML form fields.
 
+> :warning: Do you use PSR-7? Try [Embryo Validation](https://github.com/davidecesarano/Embryo-Validation), the new version of this repository.
+
 ## Usage
 ```php 
 require_once('Validation.php');
