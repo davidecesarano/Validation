@@ -372,7 +372,7 @@
          * @return boolean
          */
         public static function is_bool($value){
-            if(filter_var($value, FILTER_VALIDATE_BOOLEAN)) return true;
+            if(is_bool(filter_var($value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE))) return true;
         }
         
         /**
