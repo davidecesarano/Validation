@@ -12,6 +12,24 @@
      */
      
     class Validation {
+
+        private $name;
+        private $value;
+        private $file;
+        
+        public function __construct(
+        
+            $name = null,
+            $value = null,
+            $file = null,
+            $errors = null
+
+        ) {
+            $this->name = $name;
+            $this->value = $value;
+            $this->file = $file;
+            $this->errors = $errors;
+        }
         
         /**
          * @var array $patterns
@@ -33,7 +51,7 @@
             'date_ymd'      => '[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}',
             'email'         => '[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+[.]+[a-z-A-Z]'
         );
-        
+                
         /**
          * @var array $errors
          */
@@ -49,7 +67,7 @@
             
             $this->name = $name;
             return $this;
-        
+            
         }
         
         /**
@@ -291,7 +309,7 @@
                     echo "$error\n";
                 }
                 exit;
-                
+                   
             }else{
                 return true;
             }
